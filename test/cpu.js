@@ -1,13 +1,10 @@
-var os = require('../lib/OSUtils');
+var os = require('../lib/OSUtils')
 
-console.log('\n');
-console.log( 'OS Utils');
-console.log('\n');
+console.log('\n')
+console.log( 'OS Utils')
+console.log('\n')
   
-setInterval(function() {
-	
-	os.cpuUsage(function(v){
-		console.log( 'CPU Usage (%): ' + v );
-	});
-
-}, 1000 );
+setInterval(async () => {
+	const usage = await os.cpuUsage()
+		console.log( 'CPU Usage (%): ' + usage )
+}, 1000 )
